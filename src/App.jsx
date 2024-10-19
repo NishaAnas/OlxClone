@@ -1,7 +1,16 @@
-export default function App() {
+import React from 'react';
+import { AuthContextProvider } from './ContextStore/AuthContext';
+import { ProductProvider } from './ContextStore/ProductContext';
+import MainRoutes from './Routes/MainRoutes';
+
+const App = () => {
     return (
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+        <AuthContextProvider> 
+        <ProductProvider> 
+          <MainRoutes />
+        </ProductProvider>
+      </AuthContextProvider>
     )
-  }
+}
+
+export default App
